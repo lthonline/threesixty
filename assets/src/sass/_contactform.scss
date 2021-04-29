@@ -1,0 +1,58 @@
+/*** Contact Form ***/
+form.wpcf7-form {
+	max-width: 745px;
+	margin: 50px auto 0;
+	background: #fff;
+	padding: 20px 30px;
+}
+.wpcf7-form {
+	p {
+		margin: 15px 0;
+		&:nth-child(-n+5) {
+			width: 49%;
+			float: left;
+			margin-right: 2%;
+		}
+		&:nth-child(2n+1) {
+			margin-right: 0;
+		}
+	}
+	label {
+		font-size: 16px;
+		font-weight: 600;
+	}
+	input {
+		padding: 20px;
+		border: 2px solid #373b4d;
+		width: 100%;
+	}
+	.wpcf7-submit {
+		border-radius: 5px;
+		font-size: 14px;
+		padding: 16px 30px;
+		background: transparent;
+		color: #373b4d;
+		letter-spacing: 1px;
+		font-size: 16px;
+		font-weight: 600;
+		transition: all 0.5s;
+		width: 100%;
+		text-transform: capitalize;
+		&:hover {
+			background: #373b4d;
+			color: #fff;
+		}
+	}
+	textarea {
+		max-height: 100px;
+		border: 2px solid #373b4d;
+		width: 100%;
+	}
+}
+.wpcf7-form-control.wpcf7-select {
+	width: 100%;
+	padding: 13px 0;
+	background: #f5f5f5;
+	border: 1px solid #f5f5f5;
+	border-radius: 7px;
+}
