@@ -1,5 +1,6 @@
 import './clock';
 import './carousel';
+import './custom';
 
 // Styles
 import '../sass/main.scss';
