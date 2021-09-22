@@ -1,44 +1,87 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-left: 100px;">
-    <a class="navbar-brand" href="#"><img class="img-fluid" src="http://localhost.the360virtualtour.com/wp-content/uploads/2021/04/the-360-virtualtour-logo.png" alt="" width="250" height="50" /></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          PORTFOLIO
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Clubs</a>
-          <a class="dropdown-item" href="#">Corporate Offices</a>          
-          <a class="dropdown-item" href="#">Farmhouse</a>
-          <a class="dropdown-item" href="#">Healthcare</a>
-          <a class="dropdown-item" href="#">Residential</a>
-          <a class="dropdown-item" href="#">Retail Shops</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          ABOUT US
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">FAQ</a>
-          <a class="dropdown-item" href="#">WHAT IS 360 VIRTUAL TOUR?</a>
-          <a class="dropdown-item" href="#">WHO NEEDS 360 VIRTUAL TOUR?</a>
-          <a class="dropdown-item" href="#">BENEFITS OF 360 VIRTUAL TOUR</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">CONTACT</a>
-      </li> 
-      <li class="nav-item">
-        <a class="nav-link" href="#">Shop</a>
-        <div style="margin-top: -70px; text-align: center;"><img class="img-fluid" src="http://localhost.the360virtualtour.com/wp-content/uploads/2021/04/shopping-icon.png" alt="" width="30" height="30" /></div>
-      </li> 
-    </ul>
-  </div>
+<?php
+/**
+ * Header Navigation template.
+ *
+ * @package Threesixty
+ */
+
+$menu_class = \Threesixty_Theme\Inc\Menus::get_instance();
+$header_menu_id = $menu_class->get_menu_id( 'threesixty-header-menu' );
+$header_menus = wp_get_nav_menu_items( $header_menu_id );
+
+?>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container d-flex justify-content-between">
+        <div class="site-logo">
+            <div class="title-with-logo">
+                <?php the_custom_logo(); ?>
+            </div>
+            <a class="brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+                <div class="title-tagline-wrap">
+                    <h1 class="site-title"><?php echo get_bloginfo('name'); ?></h1>
+                    <small><?php echo get_bloginfo('description'); ?></small>
+                </div>            
+            </a>
+        </div>        
+        
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <?php
+            if (!empty($header_menus) && is_array($header_menus)) : ?>
+                <ul class="navbar-nav ml-auto">
+                <?php
+                foreach ($header_menus as $menu_item) {
+                    if (!$menu_item->menu_item_parent) {
+
+                        $child_menu_items = $menu_class->get_child_menu_items($header_menus, $menu_item->ID);
+                        $has_children = !empty($child_menu_items) && is_array($child_menu_items);
+                        $has_sub_menu_class = !empty($has_children) ? 'has-submenu' : '';
+
+                        if (!$has_children) {
+                            ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?php echo esc_url($menu_item->url); ?>">
+                                    <?php echo esc_html($menu_item->title); ?>
+                                </a>
+                            </li>
+                            <?php
+                        } else {
+                            ?>
+                            <li class="nav-item">
+                                <a class="nav-link dropdown-toggle" href="<?php echo esc_url($menu_item->url); ?>" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <?php echo esc_html($menu_item->title); ?>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <?php
+                                    foreach ($child_menu_items as $child_menu_item) {
+                                        ?>
+                                        <a class="dropdown-item" href="<?php echo esc_url($child_menu_item->url); ?>">
+                                            <?php echo esc_html($child_menu_item->title); ?>
+                                        </a>
+                                        <?php
+                                    }
+                                    ?>
+                                </div>
+                            </li>
+                            <?php
+                        }
+                        ?>
+                        <?php
+                    }
+                }
+                ?>
+            </ul>
+
+            <?php
+            else :
+                echo 'Not working...';
+
+            endif;
+        ?>
+    </div>
+    </div>    
 </nav>

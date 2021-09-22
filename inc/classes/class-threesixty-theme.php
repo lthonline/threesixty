@@ -64,8 +64,8 @@ class THREESIXTY_THEME {
 					'site-title',
 					'site-description',
 				],
-				'height'      => 100,
-				'width'       => 400,
+				'height'      => 70,
+				'width'       => 210,
 				'flex-height' => true,
 				'flex-width'  => true,
 			]

@@ -1,8 +1,67 @@
-.elementor-button-content-wrapper .elementor-button:hover {
-    background: #373b4d;
-    color: #fff;
+.container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+    background-color: #FFF!important;
+    padding-right: 0!important;
+    padding-left: 0!important;
 }
-._4-u2 {
-    border: none!important;
-    border-radius: 0!important;
+
+/***** Portfolio Section Start *******/
+.portfolio-section {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    max-width: 100%;
+    height: auto;
+    
+    .elementor-widget:not(:last-child) {
+        margin-bottom: 0!important;
+    }
+    
+    .portfolio-image {
+        img {
+            max-width: 100%;
+        }
+    }
+    .portfolio-title {
+        display: none;
+        position: absolute;
+        background-color: rgba(0,0,0,0.5);
+        left: 0;
+        bottom: 0;
+        right: 0;
+        top: 0;
+        z-index: 9;
+        
+        .elementor-heading-title {
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            
+            a {
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                
+                span {
+                    display: block;
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+        }
+    }
+    
+    &:hover {
+        .portfolio-title {
+            display: block;
+        }
+    }
 }
+/***** Portfolio Section End *******/
