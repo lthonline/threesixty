@@ -163,7 +163,7 @@ function threesixty_widgets_init() {
     register_sidebar(array(
         'name' => __('Contact Info', 'threesixty'),
         'id' => 'contact-info-widget',
-        'description' => __('contact information widget position.', 'threesixty'),
+        'description' => __('Contact information widget position.', 'threesixty'),
         'before_widget' => '<div id="%1$s">',
         'after_widget' => '</div>',
         'before_title' => '<h3 class="widget-title">',
@@ -173,13 +173,11 @@ function threesixty_widgets_init() {
     register_sidebar(array(
         'name' => __('Contact Form', 'threesixty'),
         'id' => 'contact-form-widget',
-        'description' => __('contact form widget position.', 'threesixty'),
+        'description' => __('Contact form widget position.', 'threesixty'),
         'before_widget' => '<div id="%1$s">',
         'after_widget' => '</div>',
         'before_title' => '<h3 class="widget-title">',
         'after_title' => '</h3>',
     ));
 }
-
 add_action('widgets_init', 'threesixty_widgets_init');
-?>

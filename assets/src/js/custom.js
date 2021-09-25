@@ -5,54 +5,72 @@ jQuery(document).ready(function() {
         e.preventDefault();
         scrollToTop();
     });
+    
+    // Tasks on window scroll
+    jQuery(window).scroll(function() {
+        var $navbar = jQuery('.navbar');
+        var $this = jQuery(this);
+        
+        var $scrollTopButton = jQuery('#btnScrollToTop');
+        
+        if($this.scrollTop() > $navbar.height()) {
+            if(!$navbar.hasClass('sticky-navbar')) {
+                $navbar.addClass('sticky-navbar');
+            }
+            
+            if($scrollTopButton.hasClass('d-none')) {
+                $scrollTopButton.removeClass('d-none');
+            }
+        }
+        
+        if($this.scrollTop() < $navbar.height()) {
+            if($navbar.hasClass('sticky-navbar')) {
+                $navbar.removeClass('sticky-navbar');
+            }
+            
+            if(!$scrollTopButton.hasClass('d-none')) {
+                $scrollTopButton.addClass('d-none');
+            }
+        }
+                
+    });
+    
+    var $mobileMenu = jQuery('#mobileMenu');
+    if($mobileMenu.hasClass('show')) {
+        $mobileMenu.removeClass('show')
+    }
+    
+    jQuery('.navbar-toggler').on('click', function(e) {
+        e.preventDefault();
+        if(!$mobileMenu.hasClass('show')) {
+            $mobileMenu.addClass('show')
+        }
+    });
+    
+    jQuery('.mobile-menu-close').on('click', function(e) {
+        e.preventDefault();
+        if($mobileMenu.hasClass('show')) {
+            $mobileMenu.removeClass('show')
+        }
+    });
+    
+    $mobileMenu.find('.dropdown').each(function() {
+        var $this = jQuery(this);
+        $this.on('click', function(e) {
+            e.preventDefault();            
+            $this.find('.dropdown-menu').toggle();           
+            
+            $this.siblings('.dropdown').find('.dropdown-menu').hide();
+        });
+    });
+    
 });
-
 
 // When the user clicks on the button, scroll to the top of the document
 function scrollToTop() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
+  var rootElement = document.documentElement;
+  rootElement.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 }
-
-
-/*
-jQuary(function ($) {
-    var mybutton = document.getElementById("myBtn");
-
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
-});
-
-*/
-
-//$(document).ready(function() {
-//var offset = 220;
-//var duration = 500;
-//jQuery(window).scroll(function() {
-//    if (jQuery(this).scrollTop() > offset) {
-//        jQuery('#btnScrollToTop').fadeIn(duration);
-//    } else {
-//        jQuery('#btnScrollToTop').fadeOut(duration);
-//    }
-//});
-//
-//jQuery('#btnScrollToTop').click(function(e) {
-//    event.preventDefault();
-//    jQuery('html, body').animate({scrollTop: 0}, duration);
-//    return false;
-//})
-//});
