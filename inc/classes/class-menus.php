@@ -31,6 +31,7 @@ class Menus {
         register_nav_menus([
             'threesixty-header-menu' => esc_html__('Header Menu', 'threesixty'),
             'threesixty-footer-menu' => esc_html__('Footer Menu', 'threesixty'),
+            'threesixty-mobile-menu' => esc_html__('Mobile Menu', 'threesixty'),
         ]);
     }
 

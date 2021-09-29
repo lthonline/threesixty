@@ -47,45 +47,5 @@ get_header();
 		</main><!-- .site-main -->
 </div>
 
-
-<!--<h1>Hello, world!</h1>
-    <div calss="row">
-        <div class="col-12 col-sm-6 col-md-8">
-            <article>
-                <header class="entry-header content-justify">
-                    <h5 class="entry-title"><a href="#" rel="bookmark">blog title</a></h5>
-                    <span class="author">admin</span>
-                    <span class="post-date"><time datetime="2020-09-24T07:34:55+01:00">24 September 2020</time></span>
-                    <span class="categories">abc</span>
-                </header>
-                <img width="800" height="250" alt="" class="img-fluid" src="https://via.placeholder.com/700x250">
-                <div class="item-content"><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                    <p><a href="#">Read more</a></p></div>
-            </article>
-            <article>
-                <header class="entry-header content-justify">
-                    <h5 class="entry-title"><a href="#" rel="bookmark">blog title</a></h5>
-                    <span class="author">admin</span>
-                    <span class="post-date"><time datetime="2020-09-24T07:34:55+01:00">24 September 2020</time></span>
-                    <span class="categories">abc</span>
-                </header>
-                <img class="img-fluid" width="800" height="250" alt="" src="https://via.placeholder.com/700x250">
-                <div class="item-content"><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                    <p><a href="#">Read more</a></p></div>
-            </article>
-            <article>
-                <header class="entry-header content-justify">
-                    <h5 class="entry-title"><a href="#" rel="bookmark">blog title</a></h5>
-                    <span class="author">admin</span>
-                    <span class="post-date"><time datetime="2020-09-24T07:34:55+01:00">24 September 2020</time></span>
-                    <span class="categories">abc</span>
-                </header>
-                <img class="img-fluid" width="800" height="250" alt="" src="https://via.placeholder.com/700x250">
-                <div class="item-content"><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                    <p><a href="#">Read more</a></p></div>
-            </article>
-        </div>
-        <div class="col-6 col-md-4">dfgdfgdfg</div>
-    </div>-->
 <?php
 get_footer();
