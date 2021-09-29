@@ -14,21 +14,23 @@ jQuery(document).ready(function() {
     jQuery('.navbar-toggler').on('click', function(e) {
         e.preventDefault();
         if(!$mobileMenu.hasClass('show')) {
-            $mobileMenu.addClass('show')
+            $mobileMenu.addClass('show');
         }
     });
     
     jQuery('.mobile-menu-close').on('click', function(e) {
         e.preventDefault();
+        jQuery('.dropdown-menu').hide();
         if($mobileMenu.hasClass('show')) {
-            $mobileMenu.removeClass('show')
+            $mobileMenu.removeClass('show');
         }
+        
     });
     
     $mobileMenu.find('.dropdown').each(function() {
         var $this = jQuery(this);
         $this.on('click', function(e) {            
-            $this.find('.dropdown-menu').show();                       
+            $this.find('.dropdown-menu').toggle();                       
             $this.siblings('.dropdown').find('.dropdown-menu').hide();
         });
     });
