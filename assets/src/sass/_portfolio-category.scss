@@ -1,0 +1,50 @@
+.threesixty-post-list {
+    position: relative;
+    padding: 25px 0;
+    
+    .portfolio-header-wrapper {
+        padding-bottom: 15px;
+        
+        .portfolio-cat-title {
+            color: #f6891f!important;
+            font-family: Helvetica,Sans-serif;
+            font-size: 45px;
+            font-weight: 600;
+            line-height: 1.2em;
+            text-align: center!important;
+        }
+    }
+    
+    .portfolio-grid {
+        position: relative;
+        
+        .grid-col {
+            margin-bottom: 30px;
+            
+            .card {
+                box-shadow: 2px 4px 5px 0px rgba(0,0,0,0.75);
+                -webkit-box-shadow: 2px 4px 5px 0px rgba(0,0,0,0.75);
+                -moz-box-shadow: 2px 4px 5px 0px rgba(0,0,0,0.75);
+                
+                .card-body {
+                    .card-title {
+                        font-size: 25px;
+                        text-decoration: none;
+                        color: #466071;
+                    }
+                    .icon-link { 
+                        display: inline-block;
+                        margin-right: 15px;
+                        color: #466071;
+                        text-decoration: none;
+                        
+                        .dashicons {
+                            font-size: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
