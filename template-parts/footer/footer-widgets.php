@@ -128,9 +128,9 @@ $footer_menus = wp_get_nav_menu_items($footer_menu_id);
 
                 <hr class="w-100 clearfix d-md-none">
         </div>
-        <div class="row text-center text-md-left">
+        <div class="row text-center">
 
-                <div class="col-md-7 col-lg-8">
+                <div class="col-md-12 col-lg-12">
 
                     <?php
                     if (is_active_sidebar('copyright-widget')) {
@@ -145,22 +145,6 @@ $footer_menus = wp_get_nav_menu_items($footer_menu_id);
                     ?>
 
                 </div>
-
-                <div class="col-md-5 col-lg-4 ml-lg-0">
-
-                        <?php
-                        if (is_active_sidebar('social-icons-widget')) {
-                            ?>
-                            <div class="text-center text-md-right">
-                                <?php
-                                dynamic_sidebar('social-icons-widget');
-                                ?>
-                            </div>
-                            <?php
-                        }
-                        ?>
-
-                    </div>
             </div>
     </div>
 </div>
