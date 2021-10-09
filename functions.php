@@ -59,10 +59,6 @@ function threesixty_get_theme_instance() {
 
 threesixty_get_theme_instance();
 
-if (function_exists('fly_add_image_size')) {
-    fly_add_image_size('blog_single_img', 800, 300, true);
-}
-
 function threesixty_widgets_init() {
     register_sidebar(array(
         'name' => __('Footer 1', 'threesixty'),
@@ -181,3 +177,9 @@ function threesixty_widgets_init() {
     ));
 }
 add_action('widgets_init', 'threesixty_widgets_init');
+
+function year_shortcode () {
+$year = date_i18n ('Y');
+return $year;
+}
+add_shortcode ('year', 'year_shortcode');

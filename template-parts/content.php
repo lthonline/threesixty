@@ -21,7 +21,7 @@
             <div class="image-wrap">
                 <div class="post-thumb">
                     <a href="<?php the_permalink(); ?>">
-                        <?php echo fly_get_attachment_image(get_post_thumbnail_id(), 'blog_single_img'); ?>
+                        <?php echo get_the_post_thumbnail_url(get_the_ID(), 'featured-thumbnail'); ?>
                     </a>
                 </div><!-- .post-thumb-->
             </div>
