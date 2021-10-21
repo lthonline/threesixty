@@ -1,0 +1,317 @@
+/* Show 4th slide on md  if col-md-4*/
+/* Show 3rd slide on sm  if col-sm-6*/
+/* show 2 items */
+/* left or forward direction */
+/* farthest right hidden item must be abso position for animations */
+/* right or prev direction */
+/*MD*/
+/* show 3rd of 3 item slide */
+/* left or forward direction */
+/* right or prev direction */
+/*LG */
+/* show 4th item */
+/* Show 5th slide on lg if col-lg-3 */
+/* left or forward direction */
+/* right or prev direction //t - previous slide direction last item animation fix */
+
+#latestPortfolios {    
+    .carousel-inner {
+        &.portfolio-grid {
+            position: relative;
+            .grid-col {
+                .card {
+                    height: 355px;
+                    @media screen and (min-width: 320px) and (max-width: 575px) {
+                        height: auto!important;
+                    }
+                    @media screen and (min-width: 480px) and (max-width: 767px) {
+                        height: auto!important;
+                    }
+                    .card-body {
+                        .card-title {                            
+                            font-size: 20px!important;
+                            color: #466071!important;
+                            line-height: 0.5!important;
+                            
+                            &:hover {
+                                color: #f6891f!important;
+                            }
+                        }
+                        .icon-link {
+                            display: inline-block;
+                            margin-right: 15px;
+                            color: #466071;
+                            .dashicons {
+                                font-size: 25px;
+                                &:hover {
+                                    color: #f6891f!important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .carousel-control-next, .carousel-control-prev {
+        width: 11%;
+        margin: 0 -15px 105px -11px;
+        opacity: 1;
+        
+        .carousel-control-icon-bg {
+            background-color: #fff!important;
+            height: 50px;
+            width: 50px;
+            border-radius: 50px;
+            color: #f6891f;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0px -10px -10px -10px;
+            cursor: pointer;
+            outline: 0;
+        
+            .dashicons {
+                font-size: 35px;
+                font-weight: 1500;
+                padding: 7px 0 0 0;
+                margin: 0 11px 0 0;
+            }
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+        .carousel-inner {
+            .active.col-md-4.carousel-item {
+                &+.carousel-item {
+                    &+.carousel-item {
+                        &+.carousel-item {
+                            position: absolute;
+                            top: 0;
+                            right: -33.3333%;
+                            z-index: -1;
+                            display: block;
+                            visibility: visible;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media (min-width: 576px) and (max-width: 768px) {
+        .carousel-inner {
+            .active.col-sm-6.carousel-item {
+                &+.carousel-item {
+                    &+.carousel-item {
+                        position: absolute;
+                        top: 0;
+                        right: -50%;
+                        z-index: -1;
+                        display: block;
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+    }
+    @media (min-width: 576px) {
+        .carousel-item {
+            margin-right: 0;
+        }
+        .carousel-inner {
+            .active {
+                &+.carousel-item {
+                    display: block;
+                }
+            }
+            .carousel-item.active {
+                &:not(.carousel-item-right) {
+                    &:not(.carousel-item-left) {
+                        transition: none;
+                        &+.carousel-item {
+                            transition: none;
+                        }
+                    }
+                }
+            }
+            .carousel-item-next {
+                position: relative;
+                transform: translate3d(0, 0, 0);
+            }
+            .carousel-item-prev.carousel-item-right {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                display: block;
+                visibility: visible;
+            }
+        }
+        .active.carousel-item-left {
+            &+.carousel-item-next.carousel-item-left {
+                position: relative;
+                transform: translate3d(-100%, 0, 0);
+                visibility: visible;
+            }
+        }
+        .carousel-item-next.carousel-item-left {
+            &+.carousel-item {
+                position: relative;
+                transform: translate3d(-100%, 0, 0);
+                visibility: visible;
+                &+.carousel-item {
+                    position: relative;
+                    transform: translate3d(-100%, 0, 0);
+                    visibility: visible;
+                }
+            }
+        }
+        .active.carousel-item-right {
+            &+.carousel-item-prev.carousel-item-right {
+                position: relative;
+                transform: translate3d(100%, 0, 0);
+                visibility: visible;
+                display: block;
+                visibility: visible;
+            }
+        }
+        .carousel-item-prev.carousel-item-right {
+            &+.carousel-item {
+                position: relative;
+                transform: translate3d(100%, 0, 0);
+                visibility: visible;
+                display: block;
+                visibility: visible;
+                &+.carousel-item {
+                    position: relative;
+                    transform: translate3d(100%, 0, 0);
+                    visibility: visible;
+                    display: block;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+    @media (min-width: 768px) {
+        .carousel-inner {
+            .active {
+                &+.carousel-item {
+                    &+.carousel-item {
+                        display: block;
+                    }
+                }
+            }
+            .carousel-item.active {
+                &:not(.carousel-item-right) {
+                    &:not(.carousel-item-left) {
+                        &+.carousel-item {
+                            &+.carousel-item {
+                                transition: none;
+                            }
+                        }
+                    }
+                }
+            }
+            .carousel-item-next {
+                position: relative;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+        .carousel-item-next.carousel-item-left {
+            &+.carousel-item {
+                &+.carousel-item {
+                    &+.carousel-item {
+                        position: relative;
+                        transform: translate3d(-100%, 0, 0);
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+        .carousel-item-prev.carousel-item-right {
+            &+.carousel-item {
+                &+.carousel-item {
+                    &+.carousel-item {
+                        position: relative;
+                        transform: translate3d(100%, 0, 0);
+                        visibility: visible;
+                        display: block;
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+    }
+    @media (min-width: 991px) {
+        .carousel-inner {
+            .active {
+                &+.carousel-item {
+                    &+.carousel-item {  
+                        &+.carousel-item {
+                            display: block;
+                        }
+                    }
+                }
+            }
+            .carousel-item.active {
+                &:not(.carousel-item-right) {
+                    &:not(.carousel-item-left) {
+                        &+.carousel-item {
+                            &+.carousel-item {
+                                &+.carousel-item {
+                                    transition: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .active.col-lg-3.carousel-item {
+                &+.carousel-item {
+                    &+.carousel-item {
+                        &+.carousel-item {
+                            &+.carousel-item {
+                                position: absolute;
+                                top: 0;
+                                right: -25%;
+                                z-index: -1;
+                                display: block;
+                                visibility: visible;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .carousel-item-next.carousel-item-left {
+            &+.carousel-item {
+                &+.carousel-item {
+                    &+.carousel-item {
+                        &+.carousel-item {
+                            position: relative;
+                            transform: translate3d(-100%, 0, 0);
+                            visibility: visible;
+                        }
+                    }
+                }
+            }
+        }
+        .carousel-item-prev.carousel-item-right {
+            &+.carousel-item {
+                &+.carousel-item {
+                    &+.carousel-item {
+                        &+.carousel-item {
+                            position: relative;
+                            transform: translate3d(100%, 0, 0);
+                            visibility: visible;
+                            display: block;
+                            visibility: visible;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
