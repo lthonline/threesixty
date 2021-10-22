@@ -1,6 +1,8 @@
 import './clock';
 import './carousel';
 import './custom';
+import './portfolio-carousel';
+import './wow';
 
 // Styles
 import '../sass/main.scss';

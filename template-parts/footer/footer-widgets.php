@@ -56,12 +56,24 @@ $footer_menus = wp_get_nav_menu_items($footer_menu_id);
 </div>
 
 <div class="footer-menu footer-bg text-center text-md-left pt-4">
-    <div class="container">
-        <div class="row text-center text-md-left mt-3 pb-3">
+    <div class="container text-center">
+        <div class="row text-md-left mt-3 pb-3">
+            <?php
+            if (is_active_sidebar('google-trusted-widget')) {
+            ?>
+                <div class="footer-img-block">
+                    <?php
+                    dynamic_sidebar('google-trusted-widget');
+                    ?>
+                </div>
+            <?php
+            }
+            ?>
+            
             <?php
             if (is_active_sidebar('footer-1-widget')) {
             ?>
-                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-2">
+                <div class="footer-widget-m">
                     <?php
                     dynamic_sidebar('footer-1-widget');
                     ?>
@@ -69,83 +81,66 @@ $footer_menus = wp_get_nav_menu_items($footer_menu_id);
             <?php
             }
             ?>
-
-                <hr class="w-100 clearfix d-md-none">
-
+            
+            <hr class="w-100 clearfix d-md-none">
+            
+            <?php
+            if (is_active_sidebar('footer-2-widget')) {
+            ?>
+            <div class="footer-widget-b">
                 <?php
-                if (is_active_sidebar('footer-2-widget')) {
-                    ?>
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-2">
-                        <?php
-                        dynamic_sidebar('footer-2-widget');
-                        ?>
-                    </div>
-                    <?php
-                }
+                dynamic_sidebar('footer-2-widget');
                 ?>
-
-                <hr class="w-100 clearfix d-md-none">
-
+            </div>
+            <?php            
+            }
+            ?>
+            
+            <hr class="w-100 clearfix d-md-none">
+                
+            <?php
+            if (is_active_sidebar('footer-3-widget')) {
+            ?>
+            <div class="footer-widget-s">
                 <?php
-                if (is_active_sidebar('footer-3-widget')) {
-                    ?>
-                    <div class="col-md-5 col-lg-2 col-xl-2 mx-auto mt-2">
-                        <?php
-                        dynamic_sidebar('footer-3-widget');
-                        ?>
-                    </div>
-                    <?php
-                }
+                dynamic_sidebar('footer-3-widget');
                 ?>
-
-                <hr class="w-100 clearfix d-md-none">
-
+            </div>
+            <?php
+            }
+            ?>
+            
+            <hr class="w-100 clearfix d-md-none">
+                
+            <?php
+            if (is_active_sidebar('footer-4-widget')) {
+            ?>
+            <div class="footer-widget-m">
                 <?php
-                if (is_active_sidebar('footer-4-widget')) {
-                    ?>
-                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-2">
-                        <?php
-                        dynamic_sidebar('footer-4-widget');
-                        ?>
-                    </div>
-                    <?php
-                }
+                dynamic_sidebar('footer-4-widget');
                 ?>
-
-                <hr class="w-100 clearfix d-md-none">
-
-                <?php
-                if (is_active_sidebar('footer-5-widget')) {
-                    ?>
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-2">
-                        <?php
-                        dynamic_sidebar('footer-5-widget');
-                        ?>
-                    </div>
-                    <?php
-                }
-                ?>        
-
-                <hr class="w-100 clearfix d-md-none">
+            </div>
+            <?php
+            }
+            ?>
+            
+            <hr class="w-100 clearfix d-md-none">
         </div>
         <div class="row text-center">
-
-                <div class="col-md-12 col-lg-12">
-
+            <div class="col-md-12 col-lg-12">
+                <?php
+                if (is_active_sidebar('copyright-widget')) {
+                ?>
+                <p class="text-center text-md-center" style="color: #ffffff;">
                     <?php
-                    if (is_active_sidebar('copyright-widget')) {
-                        ?>
-                        <p class="text-center text-md-center" style="color: #ffffff;">
-                            <?php
-                            dynamic_sidebar('copyright-widget');
-                            ?>
-                        </p>
-                        <?php
-                    }
+                    dynamic_sidebar('copyright-widget');
                     ?>
-
-                </div>
+                </p>
+                <?php
+                }
+                ?>
             </div>
+        </div>
     </div>
 </div>
     

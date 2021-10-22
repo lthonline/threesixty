@@ -100,10 +100,73 @@ footer {
             -ms-flex-pack: justify;
             justify-content: space-between;
             padding: .5rem 1rem;
-
-            .widget-title {
-                color: #f6891f;
+            
+            .footer-img-block {
+                float: left;
+                width: calc(15.33% - 1px);
+                max-width: 400px;
+                position: relative;
+                margin: 0 1px 1px 0;
+                margin: 0.5rem 1rem 0 !important;                
+                
+                @media only screen and (max-width: 991px) {
+                    width: 100%!important;
+                    margin: 0 auto!important;
+                }
             }
+            
+            .footer-widget-b {
+                float: left;
+                width: calc(20.33% - 1px);
+                position: relative;
+                margin: 0 1px 1px 0;
+                margin: 0.5rem 1rem 0 !important;
+                
+                .widget-title {
+                    color: #f6891f;
+                }
+                
+                @media only screen and (max-width: 991px) {
+                    width: 100%!important;
+                    text-align: center;
+                }
+            }            
+            
+            .footer-widget-m {
+                float: left;
+                width: calc(17.33% - 1px);
+                position: relative;
+                margin: 0 1px 1px 0;
+                margin: 0.5rem 1rem 0 !important;
+                
+                .widget-title {
+                    color: #f6891f;
+                }
+                
+                @media only screen and (max-width: 991px) {
+                    width: 100%!important;
+                    text-align: center;
+                }
+            }
+            
+            .footer-widget-s {
+                float: left;
+                width: calc(15.33% - 1px);
+                position: relative;
+                margin: 0 1px 1px 0;
+                margin: 0.5rem 1rem 0 !important;
+                
+                .widget-title {
+                    color: #f6891f;
+                }
+                
+                @media only screen and (max-width: 991px) {
+                    width: 100%!important;
+                    text-align: center;
+                }
+            }
+
+            
             .custom-html-widget {
                 color: #a2a2a2;
             }
