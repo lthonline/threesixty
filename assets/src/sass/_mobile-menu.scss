@@ -1,0 +1,83 @@
+.mobile-menu {
+    position: fixed;
+    overflow-x:visible; 
+    width: 0;
+    left: auto;
+    top:0;
+    bottom: 0;
+    right: -10px;
+    background-color: #efefef;
+    box-shadow: -1px 2px 5px 1px rgba(0,0,0,0.68);
+    -webkit-box-shadow: -1px 2px 5px 1px rgba(0,0,0,0.68);
+    -moz-box-shadow: -1px 2px 5px 1px rgba(0,0,0,0.68);
+    transition: width 0.3s ease;
+    z-index: 1031;
+    
+    button {
+        &.mobile-menu-close {
+            display: block;
+            width: 50px;
+            height: 50px;            
+        }
+    }
+    
+    &.show {
+        width: 270px;
+        max-width: 270px;
+    }
+    
+    .mobile-menu-nav {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        
+        .mobile-menu-item {            
+            padding : 10px 20px;
+            border-bottom: solid 1px #ccc;
+            height: auto;
+            
+            &.dropdown {
+                position: relative;
+                
+                >.dropdown-menu {
+                    left: 10px;
+                    right: 0;
+                    width: 90%;
+                    box-shadow: 8px 9px 5px -7px rgba(0,0,0,0.66);
+                    -webkit-box-shadow: 8px 9px 5px -7px rgba(0,0,0,0.66);
+                    -moz-box-shadow: 8px 9px 5px -7px rgba(0,0,0,0.66);
+                    
+                    .dropdown-item {
+                        font-size: 16px;
+                        color: #466071;
+                        text-decoration: none;
+                        font-weight: 400;
+                        border-bottom: solid 1px #ccc;
+                        padding: 10px 15px;
+                        overflow-wrap: break-word;
+                        white-space: normal;
+                        
+                        &:last-child {
+                            border-bottom: 0;
+                        }
+                    }
+                }
+            }
+            
+            .mobile-menu-link {
+                color: #466071;
+                letter-spacing: .1em;
+                font-family: verdana,geneva,sans-serif;
+                font-weight: 500;
+                font-size: 16px;
+                text-decoration: none;
+                
+                &.dropdown-toggle::after {
+                    display: none;
+                }
+                
+            }            
+        }        
+    }
+    
+}
