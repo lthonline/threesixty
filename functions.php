@@ -192,9 +192,14 @@ function show_on_home_shortcode() {
         $counter = 1;
         while ($my_portfolios->have_posts()):
         $my_portfolios->the_post();
+        $activeClass = "";
         if ($counter == 1) {
+            $activeClass = "active";
+        } else {
+            $activeClass = "";
+        }
         ?>
-            <div class="carousel-item grid-col col-12 col-sm-6 col-md-4 col-lg-3 active">
+        <div class="carousel-item grid-col col-12 col-sm-6 col-md-4 col-lg-4 align-items-stretch <?php echo $activeClass; ?>">
                 <div class="card">
                     <?php
                 if(get_field('virtual_tour_link')){
@@ -228,46 +233,7 @@ function show_on_home_shortcode() {
                     </div>
                 </div>
             </div>
-            <?php
-        } else {
-        ?>
-            <div class="carousel-item grid-col col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card">
-                <?php
-                if(get_field('virtual_tour_link')){
-                    if ( has_post_thumbnail() ) {?>
-                    <a href="<?php the_field('virtual_tour_link')?>" target="_blank">
-                        <img class="card-img-top" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" alt="<?php echo get_the_title(); ?>">
-                    </a>
-                    <?php }
-                    } else {
-                        if ( has_post_thumbnail() ) { ?>
-                        <img class="card-img-top" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" alt="<?php echo get_the_title(); ?>">
-                        <?php }
-                    } ?>
-                    <div class="card-body text-center">
-                    <?php
-                    if(get_field('virtual_tour_link')) { ?>
-                        <h2><a class="card-title" href="<?php the_field('virtual_tour_link')?>" target="_blank"><?php the_title(); ?></a></h2>
-                        <a class="icon-link" href="<?php the_field('virtual_tour_link')?>" target="_blank"><span class="dashicons dashicons-video-alt"></span></a>
-                        <?php } else { ?>
-                        <h2 class="card-title"><?php the_title(); ?></h2>
-                        <?php } 
-                        if(get_field('facebook_link')) { ?>
-                        <a class="icon-link" href="<?php the_field('facebook_link')?>" target="_blank"><span class="dashicons dashicons-facebook"></span></a>
-                        <?php }
-                        if(get_field('youtube_link')) { ?>
-                        <a class="icon-link" href="<?php the_field('youtube_link')?>" target="_blank"><span class="dashicons dashicons-youtube"></span></a>
-                        <?php }
-                        if(get_field('instagram_link')) { ?>
-                        <a class="icon-link" href="<?php the_field('instagram_link')?>" target="_blank"><span class="dashicons dashicons-instagram"></span></a>
-                        <?php } ?>
-                    </div>
-                </div>
-            </div>            
-        <?php
-        }
-        
+        <?php        
         $counter++;
         endwhile;
         ?> 
