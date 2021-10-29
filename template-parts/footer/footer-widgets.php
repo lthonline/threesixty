@@ -57,7 +57,7 @@ $footer_menus = wp_get_nav_menu_items($footer_menu_id);
 
 <div class="footer-menu footer-bg text-center text-md-left pt-4">
     <div class="container text-center">
-        <div class="row text-md-left mt-3 pb-3">
+        <div class="row mt-3 pb-3">
             <?php
             if (is_active_sidebar('google-trusted-widget')) {
             ?>
