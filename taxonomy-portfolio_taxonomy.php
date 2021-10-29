@@ -3,14 +3,16 @@ get_header();
 
 $portfolio_cat_slug = get_queried_object()->slug;
 $portfolio_cat_name = get_queried_object()->name;
+$portfolio_desc = term_description();
 ?>
 
 <div class="wrap">
     <div id="primary" class="content-area container">
         <main id="main" class="site-main" role="main">
             <div class="threesixty-post-list">
-                <div class="portfolio-header-wrapper">
-                    <h1 class="portfolio-cat-title"><?php echo $portfolio_cat_name ?></h1>
+                <div class="portfolio-header-wrapper text-center">
+                    <h2 class="portfolio-cat-title"><?php echo $portfolio_cat_name ?></h2>
+                    <p><?php echo $portfolio_desc; ?></p>
                 </div>
                 <div style="position: relative">
                     <?php
